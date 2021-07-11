@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hyperf
+  labels:
+    app: hyperf
+    service: hyperf
+spec:
+  ports:
+  - port: 9501
+    name: http
+  selector:
+    app: hyperf

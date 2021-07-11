@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: hyperf
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - bookinfo-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /hyperf
+    rewrite:
+      uri: /
+    route:
+    - destination:
+        host: hyperf
+        port:
+          number: 9501
